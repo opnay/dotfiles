@@ -1,5 +1,6 @@
 {
 	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/zsh"
+		"terminal.integrated.shell.linux": "/bin/zsh",
+		"editor.fontFamily": "'Droid Sans Mono for Powerline', Menlo, Monaco, 'Courier New', monospace",
 	}
 }

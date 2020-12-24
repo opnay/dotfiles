@@ -10,6 +10,6 @@ echo "- Run install script"
 
 echo "📕 Install oh-my-zsh/theme/agnoster.custiom"
 echo "- Copy Theme"
-cp theme/agnoster.zsh-theme ~/.oh-my-zsh/custom/themes/agnoster.zsh-theme
+cp theme/oh-my-zsh/agnoster.zsh-theme ~/.oh-my-zsh/custom/themes/agnoster.zsh-theme
 echo "- Change .zshrc config"
 sed -i 's/ZSH_THEME=.*/ZSH_THEME="agnoster"/gi' ~/.zshrc
