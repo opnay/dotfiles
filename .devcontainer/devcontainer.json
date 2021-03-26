@@ -2,5 +2,13 @@
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/zsh",
 		"editor.fontFamily": "'Droid Sans Mono for Powerline', Menlo, Monaco, 'Courier New', monospace",
-	}
+	},
+	"extensions": [
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"pkief.material-icon-theme",
+		"eamodio.gitlens",
+		"humao.rest-client",
+		"jpoissonnier.vscode-styled-components"
+	]
 }
