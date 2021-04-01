@@ -11,6 +11,7 @@
 		"pkief.material-icon-theme",
 		"eamodio.gitlens",
 		"humao.rest-client",
-		"jpoissonnier.vscode-styled-components"
+		"jpoissonnier.vscode-styled-components",
+		"mhutchie.git-graph"
 	]
 }
