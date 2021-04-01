@@ -1,7 +1,9 @@
 {
+	"forwardPorts": [3000],
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/zsh",
-		"editor.fontFamily": "'Droid Sans Mono for Powerline', Menlo, Monaco, 'Courier New', monospace",
+		"editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono for Powerline', Menlo, Monaco, 'Courier New', monospace",
+		"dotfiles.repository": "https://github.com/opnay/dotfiles",
 	},
 	"extensions": [
 		"dbaeumer.vscode-eslint",
