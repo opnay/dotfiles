@@ -4,7 +4,6 @@ git config --global alias.cp "cherry-pick"
 git config --global alias.ca "commit --amend"
 git config --global alias.one "log --graph --all --pretty=format:'%h -%C(yellow)%d%C(reset) %s%C(reset)'"
 git config --global alias.f "fetch"
-cat .gitconfig.ext >> ~/.gitconfig
 
 echo "📕 Install powerline fonts"
 echo "- Clone git"
