@@ -1,3 +1,10 @@
+function wait_clone() {
+  git clone $1 $2
+  PID=$!
+  wait $PID
+}
+
+
 echo "🎯 Install .gitconfig"
 git config --global alias.c "commit"
 git config --global alias.cp "cherry-pick"
@@ -19,14 +26,14 @@ git config --global alias.f "fetch"
 
 echo "🎯 Install oh-my-zsh/plugin/autojump"
 echo "📕 Clone git"
-git clone git://github.com/wting/autojump.git
+wait_clone git://github.com/wting/autojump.git
 echo "📕 Run install script"
 (cd autojump && python install.py)
 echo "📕 Add .zshrc"
 sed -i 's/plugins=(\(.*\))/plugins=(\1 autojump)/gi' ~/.zshrc
 
 echo "🎯 Install oh-my-zsh/plugin/zsh-syntax-highlighting"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+wait_clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 sed -i 's/plugins=(\(.*\))/plugins=(\1 zsh-syntax-highlighting)/gi' ~/.zshrc
 
 echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
