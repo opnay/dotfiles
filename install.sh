@@ -37,4 +37,7 @@ echo "🎯 Install oh-my-zsh/plugin/zsh-syntax-highlighting"
 wait_clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 sed -i 's/plugins=(\(.*\))/plugins=(\1 zsh-syntax-highlighting)/gi' ~/.zshrc
 
+echo "🎯 Setup node_modules/.bin"
+echo "PATH=./node_modules/.bin:\$PATH" >> ~/.zshrc
+
 echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
