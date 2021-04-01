@@ -1,9 +1,10 @@
+#!/usr/bin/zsh
+
 function wait_clone() {
   git clone $1 $2
   PID=$!
   wait $PID
 }
-
 
 echo "🎯 Install .gitconfig"
 git config --global alias.c "commit"
