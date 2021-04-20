@@ -13,9 +13,6 @@ git config --global alias.ca "commit --amend"
 git config --global alias.one "log --graph --all --pretty=format:'%h -%C(yellow)%d%C(reset) %s%C(reset)'"
 git config --global alias.f "fetch"
 
-echo "🎯 Install powerline fonts"
-zsh ./install.brew.sh
-
 # echo "🎯 Install powerline fonts"
 # echo "📕 Clone git"
 # git clone https://github.com/powerline/fonts.git --depth=1
@@ -27,17 +24,20 @@ zsh ./install.brew.sh
 # cp theme/oh-my-zsh/agnoster.zsh-theme ~/.oh-my-zsh/custom/themes/agnoster.zsh-theme
 # echo "📕 Change .zshrc config"
 # sed -i 's/ZSH_THEME=.*/ZSH_THEME="agnoster"/gi' ~/.zshrc
+echo "🎯 Install homebrew"
+CI=true /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 
 echo "🎯 Install gh"
-curl -l https://github.com/cli/cli/releases/download/v1.9.1/gh_1.9.1_linux_amd64.deb --out gh.deb
-dpkg install gh.deb
+curl -L https://github.com/cli/cli/releases/download/v1.9.1/gh_1.9.1_linux_amd64.deb --out gh.deb
+sudo dpkg -i gh.deb
 brew install git
 
 echo "🎯 Install oh-my-zsh/plugin/autojump"
 echo "📕 Clone git"
 wait_clone git://github.com/wting/autojump.git
 echo "📕 Run install script"
-(cd autojump && $(/usr/bin/env python) install.py)
+(cd autojump && ./install.py)
 echo "📕 Add .zshrc"
 sed -i 's/plugins=(\(.*\))/plugins=(\1 autojump)/gi' ~/.zshrc
 
