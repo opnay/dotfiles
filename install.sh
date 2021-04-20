@@ -13,6 +13,9 @@ git config --global alias.ca "commit --amend"
 git config --global alias.one "log --graph --all --pretty=format:'%h -%C(yellow)%d%C(reset) %s%C(reset)'"
 git config --global alias.f "fetch"
 
+echo "🎯 Install powerline fonts"
+zsh ./install.brew.sh
+
 # echo "🎯 Install powerline fonts"
 # echo "📕 Clone git"
 # git clone https://github.com/powerline/fonts.git --depth=1
@@ -25,11 +28,16 @@ git config --global alias.f "fetch"
 # echo "📕 Change .zshrc config"
 # sed -i 's/ZSH_THEME=.*/ZSH_THEME="agnoster"/gi' ~/.zshrc
 
+echo "🎯 Install gh"
+curl -l https://github.com/cli/cli/releases/download/v1.9.1/gh_1.9.1_linux_amd64.deb --out gh.deb
+dpkg install gh.deb
+brew install git
+
 echo "🎯 Install oh-my-zsh/plugin/autojump"
 echo "📕 Clone git"
 wait_clone git://github.com/wting/autojump.git
 echo "📕 Run install script"
-(cd autojump && python install.py)
+(cd autojump && $(/usr/bin/env python) install.py)
 echo "📕 Add .zshrc"
 sed -i 's/plugins=(\(.*\))/plugins=(\1 autojump)/gi' ~/.zshrc
 
@@ -37,7 +45,14 @@ echo "🎯 Install oh-my-zsh/plugin/zsh-syntax-highlighting"
 wait_clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 sed -i 's/plugins=(\(.*\))/plugins=(\1 zsh-syntax-highlighting)/gi' ~/.zshrc
 
+echo "🎯 Install oh-my-zsh/plugin/zsh-autosuggestions"
+wait_clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+sed -i 's/plugins=(\(.*\))/plugins=(\1 zsh-autosuggestions)/gi' ~/.zshrc
+
 echo "🎯 Setup node_modules/.bin"
 echo "PATH=./node_modules/.bin:\$PATH" >> ~/.zshrc
+
+echo "🎯 Cleanup"
+brew cleanup
 
 echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
