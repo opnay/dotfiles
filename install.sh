@@ -24,9 +24,10 @@ git config --global alias.f "fetch"
 # cp theme/oh-my-zsh/agnoster.zsh-theme ~/.oh-my-zsh/custom/themes/agnoster.zsh-theme
 # echo "📕 Change .zshrc config"
 # sed -i 's/ZSH_THEME=.*/ZSH_THEME="agnoster"/gi' ~/.zshrc
-echo "🎯 Install homebrew"
-CI=true /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
+
+# echo "🎯 Install homebrew"
+# CI=true /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 
 echo "🎯 Install oh-my-zsh/plugin/autojump"
 echo "📕 Clone git"
@@ -47,7 +48,7 @@ sed -i 's/plugins=(\(.*\))/plugins=(\1 zsh-autosuggestions)/gi' ~/.zshrc
 echo "🎯 Setup node_modules/.bin"
 echo "PATH=./node_modules/.bin:\$PATH" >> ~/.zshrc
 
-echo "🎯 Cleanup"
-brew cleanup
+# echo "🎯 Cleanup"
+# brew cleanup
 
 echo "✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅"
