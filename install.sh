@@ -28,11 +28,6 @@ echo "🎯 Install homebrew"
 CI=true /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 
-echo "🎯 Install gh"
-curl -L https://github.com/cli/cli/releases/download/v1.9.1/gh_1.9.1_linux_amd64.deb --out gh.deb
-sudo dpkg -i gh.deb
-brew install git
-
 echo "🎯 Install oh-my-zsh/plugin/autojump"
 echo "📕 Clone git"
 wait_clone git://github.com/wting/autojump.git
